@@ -1,0 +1,102 @@
+{% extends "restaurant/base.html" %} {% block content %}
+<div>
+  <h1>Order form</h1>
+  <div style="display: flex; align-items: center; justify-content: center">
+  <form action="{% url 'confirmation' %}" method="POST">
+    {% csrf_token %}
+    <div>
+      <label for="name">Name:</label>
+      <input name="name" id="name" required />
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input name="email" id="email" required />
+    </div>
+
+    <div>
+      <label for="phone">Phone number:</label>
+      <input name="phone" id="phone" required />
+    </div>
+
+    <div>
+      <label for="special-instructions">Special Instructions:</label>
+      <textarea
+        name="special-instructions"
+        id="special-instructions"
+      ></textarea>
+    </div>
+
+    <div>
+      <h3>Items</h3>
+      <div>
+        <input type="checkbox" name="donut" id="cinnamon" value="Cinnamon" />
+        <label for="cinnamon">Cinnamon Donut, $1.99</label>
+      </div>
+      <div>
+        <input type="checkbox" name="donut" id="glazed" value="Glazed" />
+        <label for="glazed">Glazed Donut, $2.99</label>
+        <ul>
+          <li>
+            <input
+              type="radio"
+              name="glazed-frosting"
+              id="strawberry"
+              value="strawberry"
+            />
+            <label for="strawberry">Strawberry Frosting, $0.50</label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="glazed-frosting"
+              id="chocolate"
+              value="chocolate"
+            />
+            <label for="chocolate">Chocolate Frosting, $0.50</label>
+          </li>
+
+          <li>
+            <input
+              type="radio"
+              name="glazed-frosting"
+              id="vanilla"
+              value="vanilla"
+            />
+            <label for="vanilla">Vanilla Frosting, $0.50</label>
+          </li>
+          <li>
+            <input type="radio" name="glazed-frosting" id="none" value="none" />
+            <label for="none">No frosting</label>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          name="donut"
+          id="chocolate-long-john"
+          value="Chocolate Long John"
+        />
+        <label for="chocolate-long-john"
+          >Chocolate Long John Donut, $1.99</label
+        >
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          name="donut"
+          id="daily-special"
+          value="Daily Special"
+        />
+        <label for="daily-special"
+          >Daily Special: {{daily_special}} Donut, $3.99</label
+        >
+      </div>
+    </div>
+    <input type="submit" value="Order" id="submitbutton"/>
+    
+  </form>
+</div>
+</div>
+{% endblock content %}

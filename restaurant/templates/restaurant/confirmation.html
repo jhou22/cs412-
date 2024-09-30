@@ -1,0 +1,23 @@
+{% extends "restaurant/base.html" %}
+
+{% block content %}
+    <h1>Order confirmation</h1>
+    <h2>Your order:</h2>
+    <div style="display: flex; align-items: center; justify-content: center;">
+    <ul>
+        
+        <li>Name: {{name}}</li>
+        <li>Email: {{email}}</li>
+        <li>Phone Number: {{phone_number}}</li>
+        <li>Order:</li>
+            <ul>
+                {% for donut in order %}
+                    <li>{{donut}}</li>
+                {% endfor %}
+            </ul>
+        <li>Price: {{price}}</li>
+        <li>Ready at: {{time_ready}}</li>
+    </ul>
+</div>
+{% endblock content %}
+
