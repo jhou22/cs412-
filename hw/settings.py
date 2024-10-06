@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'restaurant', # a4 assignment
+    'mini_fb',
 ]
 
 MIDDLEWARE = [
