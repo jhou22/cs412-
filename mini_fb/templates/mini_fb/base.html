@@ -19,8 +19,8 @@
         <![endif]-->
         <h1 id="title">Mini Facebook</h1>
         <nav>
-            <a>Link 1</a>
-            <a>Link 2</a>
+            <a href="{% url "create_profile" %}">Create New Profile</a>
+            <a href="{% url 'show_all_profiles' %}">Home</a>
         </nav>
 
         {% block content %}{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends "mini_fb/base.html" %}
+{% block content %}
+
+<h2 id='create-status-form'>Post a status message for {{status_message.first_name}} {{status_message.last_name}}</h2>
+
+<form method="POST">
+    <table>
+        {{form.as_table}}
+    
+        <tr>
+            <td></td>
+            <td>
+                <!-- we need to add the submit button ourselves -->
+                <input type="submit" name="Create Status Message">
+                {% csrf_token %}
+            </form>
+        </td>
+        </tr>
+        </table>
+</form>
+{% endblock content %}
+

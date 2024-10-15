@@ -5,13 +5,35 @@ body {
     color: #cdd6f4;
 }
 
+#create-profile {
+    text-align: center;
+}
+
+#create-status-form {
+    text-align: center;
+}
+
+table {
+    margin-left: auto;
+  margin-right: auto;
+}
 #title {
     text-align: center;
     margin-bottom: 30px;
     color: #89b4fa;
 }
 
+#add-status {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
 nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     text-align: center;
     padding: 20px;
 }
@@ -20,4 +42,12 @@ article {
     padding: 10px;
     margin: 0 auto;
     width: fit-content;
+}
+
+.profile h2 {
+    text-align: center;
+}
+
+.profile h3 {
+    text-align: center;
 }

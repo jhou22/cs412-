@@ -1,11 +1,17 @@
 {% extends "mini_fb/base.html" %} {% block content %}
 <main class="profile_container">
-  {% for profile in profiles %}
+  {% for p in profiles %}
   <article>
     <div>
-      <h2>{{profile.first_name}} {{profile.last_name}}</h2>
-      <h3>From the city of {{profile.city}}</h3>
-      <img src="{{profile.profile_image_url}}" width="200" height="200" />
+      <h2>
+        <a href="{% url 'show_profile' p.pk %}"
+          >{{p.first_name}} {{p.last_name}}</a
+        >
+      </h2>
+      <h3>From the city of {{p.city}}</h3>
+      <a href="{% url 'show_profile' p.pk %}"
+        ><img src="{{p.profile_image_url}}" width="200" height="200"
+      /></a>
     </div>
   </article>
   {% endfor %}

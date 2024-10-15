@@ -1,0 +1,25 @@
+{% extends "mini_fb/base.html" %} {% block content %}
+<main>
+  <h4 id="add-status">
+    <a href="{% url 'create_status' profile.pk %}"> Add a status message</a>
+  </h4>
+  <article class="profile">
+    <div>
+      <h2>{{profile.first_name}} {{profile.last_name}}</h2>
+      <h3>From the city of {{profile.city}}</h3>
+      <img src="{{profile.profile_image_url}}" width="500" height="500" />
+    </div>
+
+    <hr />
+    <h2>Status</h2>
+    {% for c in profile.get_status_messages %}
+    <article>
+      <div>
+        <strong>Published at {{c.timestamp}}</strong>
+        <p>{{c.message}}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </article>
+</main>
+{% endblock content %}
