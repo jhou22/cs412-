@@ -1,4 +1,5 @@
 from django.shortcuts import render
+# Jianhui Hou, jhou22@bu.edu, all views functions
 
 from . models import * 
 from . forms import *
