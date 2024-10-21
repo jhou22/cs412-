@@ -1,0 +1,31 @@
+{% comment %} Jianhui Hou, jhou22@bu.edu, html file for updating status message {% endcomment %}
+
+{% extends "mini_fb/base.html" %}
+{% block content %}
+
+<h2 id="update-status">Update Status Message: {{status_message}}</h2>
+
+
+<form method="POST">
+    <table>
+        {{form.as_table}}
+    
+        <tr>
+            <td></td>
+            <td>
+                <!-- we need to add the submit button ourselves -->
+                <div class='submit-buttons'>
+                <input type="submit" name="Update Status" value='Update'>
+                {% csrf_token %}
+            </form>
+             <form method="GET"
+                action="{% url 'show_profile' status_message.profile.pk %}">
+                    <input type="submit" name="Cancel Update Status" value='Cancel'>
+                </form>
+            </div>
+        </td>
+        </tr>
+        </table>
+</form>
+{% endblock content %}
+

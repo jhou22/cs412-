@@ -1,3 +1,4 @@
+{% comment %} Jianhui Hou, jhou22@bu.edu, base html file {% endcomment %}
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -19,8 +20,8 @@
         <![endif]-->
         <h1 id="title">Mini Facebook</h1>
         <nav>
-            <a href="{% url "create_profile" %}">Create New Profile</a>
             <a href="{% url 'show_all_profiles' %}">Home</a>
+            <a href="{% url "create_profile" %}">Create New Profile</a>
         </nav>
 
         {% block content %}{% endblock content %}

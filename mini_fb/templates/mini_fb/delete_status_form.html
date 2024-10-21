@@ -1,0 +1,20 @@
+{% comment %} Jianhui Hou, jhou22@bu.edu,  html file for delete status messages {% endcomment %}
+
+{% extends "mini_fb/base.html" %} {% block content %}
+<h3 id='delete-status'>Are you sure you want to delete this status message? {{status_message}}</h3>
+
+<div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+  <form method="POST">
+    {% csrf_token %}
+    <input type="submit" name="delete-status-message" value="yes" />
+  </form>
+  <form
+    method="GET"
+    action="{% url 'show_profile' status_message.profile.pk %}"
+  >
+    {% csrf_token %}
+    <input type="submit" name="delete-status-message" value="no" />
+  </form>
+</div>
+
+{% endblock content %}

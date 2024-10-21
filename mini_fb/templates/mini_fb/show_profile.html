@@ -1,7 +1,10 @@
+{% comment %} Jianhui Hou, jhou22@bu.edu, html file for showing a profile {% endcomment %}
+
 {% extends "mini_fb/base.html" %} {% block content %}
 <main>
   <h4 id="add-status">
     <a href="{% url 'create_status' profile.pk %}"> Add a status message</a>
+    <a href="{% url 'update_profile' profile.pk %}"> Update Profile</a>
   </h4>
   <article class="profile">
     <div>
@@ -16,7 +19,13 @@
     <article>
       <div>
         <strong>Published at {{c.timestamp}}</strong>
+        <br />
+        {% for img in c.get_images %}
+        <img src="{{img.image.url}}" alt="{{img.image.url}}" />
+        {% endfor %}
         <p>{{c.message}}</p>
+        <a href="{% url 'update_status_message' c.pk %}">Update</a>
+        <a href="{% url 'delete_status_message' c.pk %}">Delete</a>
       </div>
     </article>
     {% endfor %}
