@@ -72,3 +72,25 @@ article {
 #delete-status {
     text-align: center;
 }
+
+#friends {
+    display: flex;
+    gap: 30px;
+}
+
+#friend {
+    display: flex;
+    flex-direction: column;
+}
+
+#add {
+    padding: 5px;
+    background-color: #89b4fa;
+    width: fit-content;
+    border-radius: 2px;
+}
+
+#message {
+    display: flex;
+    gap: 10px;
+}

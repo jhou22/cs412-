@@ -1,0 +1,15 @@
+{% extends "mini_fb/base.html" %} {% block content %}
+<div>
+{% comment %} Jianhui Hou, U26752765, html file for showing possible friends {% endcomment %}
+<h3 style="text-align: center">Friends {{profile.first_name}} {{profile.last_name}} may know</h3>
+<div id="friends">
+    {% for p in profile.get_friend_suggestions %}
+    
+    <div id="friend">
+      <a id='add' href="{% url 'create_friend' profile.pk p.pk %}">Add Friend</a>
+      <a href="{% url 'show_profile' p.pk %}"><h2>{{p.first_name}} {{p.last_name}}</h2></a>
+      <img src="{{p.profile_image_url}}" width="100" height="100" />
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

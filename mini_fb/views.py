@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 # Jianhui Hou, jhou22@bu.edu, all views functions
 
 from . models import * 
@@ -109,3 +109,21 @@ class UpdateStatusMessageView(UpdateView):
         '''
         print(f'UpdateProfileView: form.cleaned_data={form.cleaned_data}')
         return super().form_valid(form)
+    
+class CreateFriendView(View):
+    def dispatch(self, request, *args, **kwargs):
+        print(kwargs.get('pk'))
+        p1 = Profile.objects.get(pk=kwargs.get('pk'))
+        p2 = Profile.objects.get(pk=kwargs.get('other_pk'))
+        p1.add_friend(p2)
+        return redirect(reverse('show_profile', kwargs={'pk':kwargs.get('pk')}))
+    
+class ShowFriendSuggestionsView(DetailView):
+    model = Profile
+    template_name = 'mini_fb/friend_suggestions.html'
+    context_object_name = 'profile'
+
+class ShowNewsFeedView(DetailView):
+    model = Profile
+    template_name = 'mini_fb/news_feed.html'
+    context_object_name = 'profile'

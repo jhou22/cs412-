@@ -1,0 +1,26 @@
+{% extends "mini_fb/base.html" %}
+{% block content %}
+<h3 style="text-align: center">News Feed</h3>
+{% comment %} Jianhui Hou, U26752765, html file for showing a news feed {% endcomment %}
+<nav>
+    <a href="{% url 'show_profile' profile.pk%}">Profile</a>       
+</nav>
+{% for s in profile.get_news_feed %}
+<div id='message'>
+    <img src="{{s.profile.profile_image_url}}" width="50" height="50" />
+<h3>{{s.profile.first_name}} {{s.profile.last_name}} at {{s.timestamp}}</h3>
+</div>
+<h1>
+    {{s.message}}
+</h1>
+{% for img in s.get_images %}
+        <img src="{{img.image.url}}" alt="{{img.image.url}} " />
+{% endfor %}
+<br />
+<br />
+<br />
+<br />
+<br />
+{% endfor %}
+{% endblock content %}
+

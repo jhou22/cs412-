@@ -4,6 +4,7 @@
   <h4 id="add-status">
     <a href="{% url 'create_status' profile.pk %}"> Add a status message</a>
     <a href="{% url 'update_profile' profile.pk %}"> Update Profile</a>
+    <a href="{% url 'news_feed' profile.pk%}">News Feed</a>
   </h4>
   <article class="profile">
     <div>
@@ -29,5 +30,17 @@
     </article>
     {% endfor %}
   </article>
+
+  <br />
+  <h3 style='text-align: center'>Friends</h3>
+  <div id="friends">
+  {% for p in profile.get_friends %}
+  <div id="friend">
+    <a href="{% url 'show_profile' p.pk %}"><h2>{{p.first_name}} {{p.last_name}}</h2></a>
+    <img src="{{p.profile_image_url}}" width="100" height="100" />
+  </div>
+
+  {% endfor %}
+</div>
 </main>
 {% endblock content %}
