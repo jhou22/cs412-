@@ -4,6 +4,7 @@
   <h4 id="add-status">
     <a href="{% url 'create_status' profile.pk %}"> Add a status message</a>
     <a href="{% url 'update_profile' profile.pk %}"> Update Profile</a>
+    <a href="{% url 'show_friend_suggestions' profile.pk%}">Suggestions</a>
     <a href="{% url 'news_feed' profile.pk%}">News Feed</a>
   </h4>
   <article class="profile">

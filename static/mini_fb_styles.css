@@ -26,6 +26,9 @@ table {
 
 #add-status {
     text-align: center;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
 }
 
 a {
