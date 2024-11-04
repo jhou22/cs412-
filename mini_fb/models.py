@@ -1,6 +1,7 @@
 import random
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 # Jianhui Hou, jhou22@bu.edu, all models
 class Profile(models.Model):
@@ -9,6 +10,7 @@ class Profile(models.Model):
     city = models.TextField(blank=False)
     email_address = models.TextField(blank=False)
     profile_image_url = models.URLField(blank=False)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     def get_absolute_url(self) -> str:
         '''
         gets the show_profile url for this profile
