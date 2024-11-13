@@ -1,0 +1,99 @@
+/* Jianhui Hou, jhou22@bu.edu, css for mini_fb */
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 30px 40px;
+  background-color: #11111b;
+  color: #cdd6f4;
+}
+
+#create-profile {
+  text-align: center;
+}
+
+#create-status-form {
+  text-align: center;
+}
+
+table {
+  margin-left: auto;
+margin-right: auto;
+}
+#title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #89b4fa;
+}
+
+#add-status {
+  text-align: center;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  gap: 10px;
+}
+
+article {
+  padding: 10px;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.profile h2 {
+  text-align: center;
+}
+
+.profile h3 {
+  text-align: center;
+}
+
+#update-profile {
+  text-align: center;
+}
+
+.submit-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#update-status {
+  text-align: center;
+}
+
+#delete-status {
+  text-align: center;
+}
+
+#friends {
+  display: flex;
+  gap: 30px;
+}
+
+#friend {
+  display: flex;
+  flex-direction: column;
+}
+
+#add {
+  padding: 5px;
+  background-color: #89b4fa;
+  width: fit-content;
+  border-radius: 2px;
+}
+
+#message {
+  display: flex;
+  gap: 10px;
+}

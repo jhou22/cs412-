@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'restaurant', # a4 assignment
     'mini_fb',
+    'voter_analytics',
 ]
 
 MIDDLEWARE = [

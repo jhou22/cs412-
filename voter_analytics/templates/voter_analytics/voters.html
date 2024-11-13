@@ -1,0 +1,62 @@
+{% extends 'voter_analytics/base.html' %}
+{% block content %}
+<div>
+    <div>
+        {% include 'voter_analytics/search.html' %}
+        
+    </div>
+    <h1>Voters</h1>
+    {% comment %} Jianhui Hou, jhou22@bu.edu, html for all voters {% endcomment %}
+
+    <div>
+        <table>
+            <tr>
+                <th>Precinct Number</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Street Address</th>
+                <th>DOB</th>
+                <th>Party</th>
+                
+                <th>Voter Score</th>
+            </tr>
+    
+            {% for v in voters %}
+            <tr>
+                
+                <td><a href={% url "voter" v.pk %}>{{v.precinct_number}}</a></td>
+                <td><a href={% url "voter" v.pk %}>{{v.last_name}}</a></td>
+                <td><a href={% url "voter" v.pk %}>{{v.first_name}}</a></td>
+                <td><a href="https://www.google.com/maps?q={{v.street_number}}+{{v.street_name}},+Newton,+MA+{{v.zip_code}}">{{v.street_number}} {{v.street_name}} {{v.zip_code}}</a></td>
+                <td><a href={% url "voter" v.pk %}>{{v.dob}}</a></td>
+                <td><a href={% url "voter" v.pk %}>{{v.party}}</a></td>
+                
+                <td><a href={% url "voter" v.pk %}>{{v.voter_score}}</a></td>
+             
+            </tr>
+            {% endfor %}
+    
+        </table>
+        </div>
+    <div class="row">
+        {% if is_paginated %}
+        <ul>
+            {% if page_obj.has_previous %}
+                <li>
+                    <span><a href="?page={{ page_obj.previous_page_number }}">Previous</a></span>
+             
+                </li>
+            {% endif %}
+                <li class="">
+                    <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.</span>
+                </li>
+            {% if page_obj.has_next %}
+                <li>
+                    <span><a href="?page={{ page_obj.next_page_number }}">Next</a></span>
+                </li>
+            {% endif %}
+            </ul>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

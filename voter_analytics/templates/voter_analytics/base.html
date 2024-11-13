@@ -1,0 +1,20 @@
+{% load static %}
+<html>
+  <head>
+    <title>Voter Analytics</title>
+    <link rel="stylesheet" href="{% static 'voters.css' %}" />
+  </head>
+  <body>
+    <header>
+      <h1>Voter Analytics</h1>
+      <nav>
+        {% comment %} Jianhui Hou, jhou22@bu.edu, html for base {% endcomment %}
+
+        <a href="{% url 'voters' %}">Home</a>
+        <a href="{% url 'graph' %}">Graphs</a>
+      </nav>
+    </header>
+
+    {% block content %} {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,43 @@
+{% extends 'voter_analytics/base.html' %}
+{% block content %}
+<div class="container">
+    <h1>{{voter.first_name}} {{voter.last_name}}</h1>
+    {% comment %} Jianhui Hou, jhou22@bu.edu, html for a voter {% endcomment %}
+
+    <table>
+        <tr>
+            <th>Precinct Number</th>
+            <th>Street Address</th>
+            <th>DOB</th>
+            <th>Party</th>
+            
+            <th>Voter Score</th>
+            <th>Registration Date</th>
+
+            <th>Voted in 2020 State Elections?</th>
+            <th>Voted in 2021 Town Elections?</th>
+            <th>Voted in 2021 Primaries?</th>
+            <th>Voted in 2022 General Elections?</th>
+            <th>Voted in 2023 Town Elections</th>
+        </tr>
+        
+        <tr>
+                
+            <td>{{voter.precinct_number}}</td>
+            <td><a href="https://www.google.com/maps?q={{voter.street_number}}+{{voter.street_name}},+Newton,+MA+{{voter.zip_code}}">{{voter.street_number}} {{voter.street_name}} {{voter.zip_code}}</a></td>
+            <td>{{voter.dob}}</td>
+            <td>{{voter.party}}</td>
+            
+            <td>{{voter.voter_score}}</td>
+            <td>{{voter.reg_date}}</td>
+
+            <td>{{voter.voted_state}}</td>
+            <td>{{voter.voted_town_21}}</td>
+            <td>{{voter.voted_primary}}</td>
+            <td>{{voter.voted_general}}</td>
+            <td>{{voter.voted_town_23}}</td>
+            
+        </tr>
+    </table>
+</div>
+{% endblock %}
